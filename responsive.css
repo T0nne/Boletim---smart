@@ -1,0 +1,88 @@
+/**
+ * RESPONSIVE.CSS
+ * Breakpoints e ajustes para diferentes telas
+ */
+
+/* ═══════════════════════════════════
+   MOBILE FIRST (padrão até 480px)
+   ═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   TABLET (481px – 768px)
+   ═══════════════════════════════════ */
+
+@media (min-width: 481px) {
+  .app {
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grades-row {
+    gap: var(--space-12);
+  }
+
+  .grade-input {
+    width: 70px;
+  }
+}
+
+/* ═══════════════════════════════════
+   DESKTOP (769px+)
+   ═══════════════════════════════════ */
+
+@media (min-width: 769px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: var(--space-32) 0;
+    background: var(--bg-primary);
+  }
+
+  .app {
+    height: calc(100vh - var(--space-32) * 2);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .header-title {
+    font-size: var(--text-xl);
+  }
+
+  .page-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* ═══════════════════════════════════
+   PEQUENINOS (abaixo 360px)
+   ═══════════════════════════════════ */
+
+@media (max-width: 359px) {
+  .tab-label {
+    display: none;
+  }
+
+  .tab-btn {
+    padding: var(--space-8) var(--space-2);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .grade-input {
+    width: 52px;
+  }
+
+  .page-content {
+    padding: var(--space-12);
+  }
+}

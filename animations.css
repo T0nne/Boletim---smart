@@ -1,0 +1,99 @@
+/**
+ * ANIMATIONS.CSS
+ * Animações e transições do app
+ */
+
+/* ═══════════════════════════════════
+   KEYFRAMES
+   ═══════════════════════════════════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ═══════════════════════════════════
+   PAGE TRANSITIONS
+   ═══════════════════════════════════ */
+
+.page.active {
+  animation: fadeIn 200ms ease forwards;
+}
+
+/* ═══════════════════════════════════
+   COMPONENT ANIMATIONS
+   ═══════════════════════════════════ */
+
+.stat-card {
+  animation: slideInUp 300ms ease forwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0ms; }
+.stat-card:nth-child(2) { animation-delay: 60ms; }
+.stat-card:nth-child(3) { animation-delay: 120ms; }
+.stat-card:nth-child(4) { animation-delay: 180ms; }
+
+.subject-card {
+  animation: fadeIn 200ms ease forwards;
+}
+
+.agenda-item {
+  animation: slideInUp 200ms ease forwards;
+}
+
+.chat-bubble {
+  animation: fadeInScale 150ms ease forwards;
+}
+
+/* ═══════════════════════════════════
+   SKELETON LOADING
+   ═══════════════════════════════════ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    var(--bg-secondary) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+/* ═══════════════════════════════════
+   REDUCED MOTION (Accessibility)
+   ═══════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

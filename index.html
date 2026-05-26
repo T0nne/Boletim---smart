@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meu Boletim - Acompanhe suas notas com IA">
+  <meta name="theme-color" content="#7c6bff">
+  <title>Meu Boletim</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- App Shell -->
+  <div id="app" class="app">
+    <header class="header" id="header"></header>
+    <nav class="tabs" id="tabs" role="tablist"></nav>
+    <main class="pages-container" id="pages"></main>
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+    <div id="modals"></div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="loader">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+    </div>
+    <p>Carregando Meu Boletim...</p>
+  </div>
+
+  <!-- Bootstrap (apenas app.js — ele importa tudo) -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
